@@ -21,9 +21,34 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<modules>
 		<module>microboot-base</module>
 	</modules>
+	
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profiles.activation>dev</profiles.activation>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>beta</id>
+            <properties>
+                <profiles.activation>beta</profiles.activation>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <profiles.activation>release</profiles.activation>
+            </properties>
+        </profile>
+    </profiles>
 	
 	<build>
 		<finalName>microboot</finalName>
